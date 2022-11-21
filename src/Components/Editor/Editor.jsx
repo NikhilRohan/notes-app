@@ -1,7 +1,7 @@
 import "/src/Components/Editor/Editor.css";
 
 const Editor = () => {
-  return <div className="editor">Editor</div>;
+  return <section className="editor"></section>;
 };
 
 export default Editor;
