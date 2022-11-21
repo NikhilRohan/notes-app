@@ -14,3 +14,30 @@
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
   cursor: col-resize;
 }
+.landingPage {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/assets/notes-background.png");
+  background-color: #37008063;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.landingPage--text {
+  color: #4a4e74;
+}
+.landingPage--btn {
+  cursor: pointer;
+  background-color: #4a4e74;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 30%;
+  height: 40px;
+  min-width: 300px;
+  font-size: 16px;
+  font-weight: 600;
+}

@@ -11,22 +11,22 @@ const converter = new Showdown.Converter({
   tasklists: true,
 });
 
-const Editor = () => {
-  const [value, setValue] = React.useState(
-    "# Type your markdown note's title here"
-  );
+const Editor = (props) => {
   const [selectedTab, setSelectedTab] = React.useState("preview");
   return (
     <div className="container">
       <ReactMde
-        value={value}
-        onChange={setValue}
+        value={props.selectedNoteBody}
+        onChange={(newValue) => {
+          props.updateSelectedNote(newValue);
+        }}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
         generateMarkdownPreview={(markdown) =>
           Promise.resolve(converter.makeHtml(markdown))
         }
         minEditorHeight={80}
+        minPreviewHeight={80}
         heightUnits="vh"
       />
     </div>
