@@ -1,0 +1,47 @@
+.noteNameModal {
+  min-width: 400px;
+  min-height: 180px;
+  height: 180px;
+  border: 1px solid #4a4e74;
+}
+.noteNameModal--header,
+.noteNameModal--footer {
+  background-color: #4a4e74;
+  width: 100%;
+  height: 20%;
+}
+.noteNameModal--content {
+  width: 100%;
+  height: 60%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noteNameModal--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  color: white;
+}
+.noteNameModal--footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.noteNameModal--footer-btn {
+  margin: 0px 5px;
+  border: none;
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.close {
+  cursor: pointer;
+  font-size: 12px;
+}
+.noteName--input {
+  margin-left: 10px;
+}

@@ -1,5 +1,6 @@
 import ConfirmationPopup from "../ConfirmationPopup/ConfirmationPopup";
 import "/src/Components/Sidebar/Sidebar.css";
+import NoteNameModal from "../NoteNameModal/NoteNameModal";
 const Sidebar = (props) => {
   const deleteBtnTemplate = (
     <button
@@ -22,9 +23,7 @@ const Sidebar = (props) => {
         }}
         key={eachNote.id}
       >
-        <h4 className="sidebar--notesText-title">
-          {eachNote.title + eachNote.id}
-        </h4>
+        <h4 className="sidebar--notesText-title">{eachNote.title}</h4>
         <ConfirmationPopup
           btnTemplate={deleteBtnTemplate}
           cancelClickEvent={() => {
@@ -49,18 +48,22 @@ const Sidebar = (props) => {
   const displayNewNote = (id) => {
     props.displayNewNote(id);
   };
+  const addNoteBtnTemplate = (
+    <button className="sidebar--addNewButton">
+      <b>+</b>
+    </button>
+  );
   return (
     <section className="sidebar">
       <div className="sidebar--header">
         <span className="sidebar--headerText">Notes</span>
-        <button
-          className="sidebar--addNewButton"
-          onClick={() => {
-            props.createNewNote();
+        <NoteNameModal
+          btnTemplate={addNoteBtnTemplate}
+          confirmClickevent={(value) => {
+            console.log(value);
+            props.createNewNote(value);
           }}
-        >
-          <b>+</b>
-        </button>
+        />
       </div>
       <div className="sidebar--notes">{sidebarNotesElements}</div>
     </section>
